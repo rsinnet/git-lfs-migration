@@ -1,5 +1,8 @@
 # git-lfs-migration
 
+[![License: FDL
+1.3](https://img.shields.io/badge/License-FDL%20v1.3-blue.svg)](https://www.gnu.org/licenses/fdl-1.3)
+
 An in-depth case study of migrating a repository to [Git
 LFS](https://git-lfs.github.com/) using the [BFG Repo
 Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) and
