@@ -5,17 +5,17 @@ LFS](https://git-lfs.github.com/) using the [BFG Repo
 Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) and
 [Bash](https://www.gnu.org/software/bash/).
 
+<<<<<<< HEAD
 ## Copyright Notice
 
-Copyright &copy; 2021 Ryan Sinnet.
-
+Copyright &copy 2021 Ryan Sinnet
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
 with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 A copy of the license is included in the section entitled "GNU
 Free Documentation License".
-
+=======
 ## Background
 
 Let’s say we have a repository that has binary files all through the history.
@@ -407,3 +407,4 @@ commits which has the unmigrated data stored without [Git
 LFS](https://git-lfs.github.com/). These refs aren’t fetched by default when you
 do `git clone`, so you won't have massive downloads with a normal `git clone`
 operation.
+>>>>>>> 5aebed0 (Add initial revision)
