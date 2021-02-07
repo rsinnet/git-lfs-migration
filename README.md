@@ -2,6 +2,8 @@
 
 [![License: FDL
 1.3](https://img.shields.io/badge/License-FDL%20v1.3-blue.svg)](https://www.gnu.org/licenses/fdl-1.3)
+[![GitHub tag (latest
+SemVer)](https://img.shields.io/github/v/tag/rsinnet/git-lfs-migration?sort=semver)](https://github.com/rsinnet/git-lfs-migration/tags)
 
 An in-depth case study of migrating a repository to [Git
 LFS](https://git-lfs.github.com/) using the [BFG Repo
