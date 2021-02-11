@@ -90,6 +90,7 @@ export GITHUB_REPO=myrepo.git
 
 export LOCAL_WS="${HOME}/git-lfs-migration-workspace"
 export BFG_JAR="${LOCAL_WS}/bfg-1.13.2.jar"
+mkdir -p "${LOCAL_WS}"
 wget -O "${BFG_JAR}" "https://repo1.maven.org/maven2/com/madgag/bfg/1.13.2/${BFG_JAR##*/}"
 ```
 
