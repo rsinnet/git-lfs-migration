@@ -110,20 +110,21 @@ Manual](https://www.gnu.org/software/bash/manual/html_node/index.html).
 We also download the [BFG Repo
 Cleaner](https://rtyley.github.io/bfg-repo-cleaner/).
 
-### Making a full back up of a repository
+### Backing up the repository
 
 [Git LFS](https://git-lfs.github.com/) is great because you don’t have to fetch
 the entire LFS database to clone a repository. You only need to fetch upon
 checkout. This also means you might want a full copy of everything to keep a
 back up or maybe because you’re traveling and won’t have internet access. In
-such a case, the best bet is to clone a mirror and fetch all LFS objects:
+such a case, the best bet is to do a mirror clone and fetch all LFS objects:
 
 ```bash
-mkdir -p "${LOCAL_WS}"
 git clone --mirror "git@github.com:${GITHUB_USER}/${GITHUB_REPO}" "${LOCAL_WS}/${GITHUB_REPO}"
 cd "${LOCAL_WS}/${GITHUB_REPO}"
 git lfs fetch --all
-tar cvzf "${HOME}/${GITHUB_REPO}.tar.gz" "${LOCAL_WS}/${GITHUB_REPO}"
+cd "${LOCAL_WS}"
+tar cvzf "${HOME}/${GITHUB_REPO}.tar.gz" "${GITHUB_REPO}"
+cd "${LOCAL_WS}/${GITHUB_REPO}"
 ```
 
 In the above, use `git clone --mirror` to clone a mirror repository. See
@@ -137,8 +138,7 @@ in the [official man
 pages](https://github.com/git-lfs/git-lfs/tree/main/docs/man).
 
 Now you have a bare repository just like the remote (and a tarball of it in your
-home directory for extra backup). You can now clone locally and use this mirror
-instead of the remote.
+home directory for extra backup).
 
 ### Adding Git LFS tracking to the default branch
 
@@ -158,7 +158,7 @@ merging? Then you have to check out a new branch after cloning. Do you need a
 pull request? Then you have to use the GitHub remote instead of the mirror.
 
 ```bash
-git clone "${LOCAL_WS}/${GITHUB_REPO}" "${LOCAL_WS}/${GITHUB_REPO%.git}"
+git clone "git@github.com:${GITHUB_USER}/${GITHUB_REPO}" "${LOCAL_WS}/${GITHUB_REPO%.git}"
 cd "${GITHUB_REPO%.git}"
 
 # If you use a merge workflow, you will need to check out a new branch here
