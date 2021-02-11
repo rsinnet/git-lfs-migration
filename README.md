@@ -119,12 +119,12 @@ back up or maybe because you’re traveling and won’t have internet access. In
 such a case, the best bet is to do a mirror clone and fetch all LFS objects:
 
 ```bash
-git clone --mirror "git@github.com:${GITHUB_USER}/${GITHUB_REPO}" "${LOCAL_WS}/${GITHUB_REPO}"
-cd "${LOCAL_WS}/${GITHUB_REPO}"
-git lfs fetch --all
 cd "${LOCAL_WS}"
+git clone --mirror "git@github.com:${GITHUB_USER}/${GITHUB_REPO}"
+cd "${GITHUB_REPO}"
+git lfs fetch --all
+cd ..
 tar cvzf "${HOME}/${GITHUB_REPO}.tar.gz" "${GITHUB_REPO}"
-cd "${LOCAL_WS}/${GITHUB_REPO}"
 ```
 
 In the above, use `git clone --mirror` to clone a mirror repository. See
@@ -159,7 +159,7 @@ pull request? Then you have to use the GitHub remote instead of the mirror.
 
 ```bash
 git clone "git@github.com:${GITHUB_USER}/${GITHUB_REPO}" "${LOCAL_WS}/${GITHUB_REPO%.git}"
-cd "${GITHUB_REPO%.git}"
+cd "${LOCAL_WS}/${GITHUB_REPO%.git}"
 
 # If you use a merge workflow, you will need to check out a new branch here
 # before proceeding.
