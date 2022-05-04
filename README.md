@@ -54,7 +54,7 @@ the object from the local LFS database. When you commit, Git will apply a
 corresponding clean filter, storing the binary object in the local LFS database
 and replacing the it with a pointer. When you push in modern Git, [Git
 LFS](https://git-lfs.github.com/) will automatically invoke `git lfs push
-origin` as part of the `git push origin** command. See
+origin` as part of the `git push origin` command. See
 [git-lfs-filter-process(1)](https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-filter-process.1.ronn)
 in the [official man
 pages](https://github.com/git-lfs/git-lfs/tree/main/docs/man).
